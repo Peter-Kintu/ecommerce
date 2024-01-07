@@ -1,0 +1,47 @@
+{% extends 'shop/layouts/main.html' %}
+
+
+{% block content %}
+
+<section class="vh-100 bg-image"
+  style="background-image: url('https://www.socialmedialife.gr/wp-content/uploads/2018/03/online-supermarket-620x350.jpg');">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="">
+          <div class="card mt-3 shadow">
+            <div class="card-body">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="text-center">
+                      <h2> Login </h2> 
+                    </div>
+                    <hr>
+                <div class="form-group">
+                  <label for="">User name :</label>
+                   <input type="text" class="form-control" name="username" placeholder="Enter username">
+                </div>
+
+
+                <div class="form-group">
+                  <label for="">Password</label>
+                  <input type="Password" class="form-control" name="password" placeholder="Enter Password">
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn float-end shadow btn-success px-4">Login</button>
+                </div>
+
+                
+              </form>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

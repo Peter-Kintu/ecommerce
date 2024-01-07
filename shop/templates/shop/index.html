@@ -1,0 +1,40 @@
+{% extends 'shop/layouts/main.html' %}
+
+{% block content %}
+{% include 'shop/inc/slider.html' %}
+            <hr> 
+                <div class="row">
+                {% for item in category %}
+                 <div class="col-md-3">
+                    <div class="card">
+                        <a href="{% url 'collectionsview' item.slug %}">
+                        <div class="card-body">
+                            <div class="category-image">
+                               <img src="{{item.image.url}}" alt="category image" class="w-100" />
+                        </div>
+                        <h4 class="text-center">{{ item.name }}</h4>
+                
+                    </div>
+                </a>
+        
+                </div>
+            </div>
+
+
+            {% endfor %}
+        </div>
+    </div>
+
+    <div>
+      <ul class="space-y-2">
+        <li><a href="#" class="text-purple-500 hover:text-purple-800">Facebook</a></li>
+        <li><a href="#" class="text-purple-500 hover:text-purple-800">Twiter</a></li>
+        <li><a href="#" class="text-purple-500 hover:text-purple-800">Whatsap</a></li>
+        <li><a href="#" class="text-purple-500 hover:text-purple-800">Instagram</a></li>
+    </ul>
+    </div> 
+    <hr>
+
+
+{% endblock content %}
+

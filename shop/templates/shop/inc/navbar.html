@@ -1,0 +1,40 @@
+{%load static%}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+      <ul class="nav-item">
+        <a class="nav-link active" href="{% url 'home' %}"><h2>Ashleyshop<h2></a>
+        </ul>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+         {%if user.is_authenticated %}
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{user}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+          {% endif %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'register' %}">Register</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'loginpage' %}">login</a>
+            </li>
+            
+           
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'collections' %}">Collections</a>
+          </li>
+         
+        </ul>
+      </div>
+    </div>
+  </nav>

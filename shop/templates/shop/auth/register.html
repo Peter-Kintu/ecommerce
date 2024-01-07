@@ -1,0 +1,77 @@
+{% extends 'shop/layouts/main.html' %}
+
+
+{% block content %}
+
+<section class="vh-100 bg-image"
+  style="background-image: url('https://www.socialmedialife.gr/wp-content/uploads/2018/03/online-supermarket-620x350.jpg');">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="">
+          <div class="card mt-3 shadow">
+            <div class="card-body">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="text-center">
+              <h2>Create an account</h2> 
+                    </div>
+                    <hr>
+                <div class="form-group">
+                  <label for="">User name :</label>
+                  {{form.username}}
+                  {% if form.errors.username %}
+                  <label class="text-danger">{{form.errors.username}}</label>
+                  {% endif %}
+                </div>
+
+                <div class="form-group">
+                  <label for="">Email :</label>
+                  {{form.email}}
+                  {% if form.errors.email %}
+                  <label class="text-danger">{{form.errors.email}}</label>
+                  {% endif %}
+                </div>
+
+                <div class="form-group">
+                  <label for="">Password :</label>
+                  {{form.password1}}
+                  {% if form.errors.password1 %}
+                  <label class="text-danger">{{form.errors.password1}}</label>
+                  {% endif %}
+                </div>
+
+                <div class="form-group">
+                  <label for="">Confirm password :</label>
+                  {{form.password2}}
+                  {% if form.errors.password2 %}
+                  <label class="text-danger">{{form.errors.password2}}</label>
+                  {% endif %}
+                </div>
+
+                <div class="form-check d-flex justify-content-center mb-5">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                  <label class="form-check-label" for="form2Example3g">
+                    I agree to all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                  </label>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn float-end shadow btn-success px-4">Register</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-2">Have already an account? <a href="{% url 'loginpage' %}"
+                    class="fw-bold text-body"><u>Login here</u></a></p>
+
+              </form>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
